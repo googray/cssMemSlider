@@ -172,6 +172,10 @@ p {
   cursor: pointer;
 }
 
+#dots label:hover {
+  background: greenyellow;
+}
+
 #slide1:checked ~ .control #dots label:nth-child(1),
 #slide2:checked ~ .control #dots label:nth-child(2),
 #slide3:checked ~ .control #dots label:nth-child(3),
@@ -187,6 +191,15 @@ p {
 
   #dots {
     margin: 0 auto 1rem;
+  }
+
+  #dots label {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  #slides .slide {
+    height: 150%;
   }
 
   .control {
