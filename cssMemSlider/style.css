@@ -185,6 +185,10 @@ p {
 }
 
 @media screen and (max-width: 320px) {
+  body {
+    height: calc(100vw * 1.78);
+  }
+
   #slider {
     padding: 2rem 0.5rem 0;
   }
