@@ -1,0 +1,222 @@
+html {
+  font-size: 10px;
+  background-color: #fff;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #666;
+}
+
+#slider {
+  margin: 0 auto;
+  width: 90vw;
+  max-width: 100%;
+
+  text-align: center;
+  padding: 2rem 1rem 0;
+  overflow: hidden;
+}
+
+#slider input[type='radio'] {
+  display: none;
+}
+
+#slides {
+  border-radius: 0.5rem;
+  box-shadow: 0.1rem 0.1rem 0.4rem #666;
+  padding: 0.8rem;
+  background: #496666;
+
+  z-index: 1;
+}
+
+#overflow {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+#slide1:checked ~ #slides .inner,
+#slide1:checked ~ .control #content .inside {
+  margin-left: 0;
+}
+#slide2:checked ~ #slides .inner,
+#slide2:checked ~ .control #content .inside {
+  margin-left: -100%;
+}
+#slide3:checked ~ #slides .inner,
+#slide3:checked ~ .control #content .inside {
+  margin-left: -200%;
+}
+
+#slide4:checked ~ #slides .inner,
+#slide4:checked ~ .control #content .inside {
+  margin-left: -300%;
+}
+
+#slide5:checked ~ #slides .inner,
+#slide5:checked ~ .control #content .inside {
+  margin-left: -400%;
+}
+
+#slides .inner {
+  width: 500%;
+  line-height: 0;
+  height: calc(80vw / 2);
+}
+#slides .inner {
+  transition: margin-left 800ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+#content .inside {
+  transition: margin-left 1000ms cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+#slides .slide {
+  width: 20%;
+  float: left;
+  display: block;
+  height: 100%;
+  background-size: 100% 99%;
+  background-repeat: no-repeat;
+}
+#slides .slide-1 {
+  background-image: url('https://i.giphy.com/media/pOeuPPvO3Lbxu/giphy.webp');
+}
+#slides .slide-2 {
+  background-image: url('https://i.giphy.com/media/cg5FwpvDmhIcM/giphy.webp');
+}
+#slides .slide-3 {
+  background-image: url('https://media4.giphy.com/media/26SSWjcPAKCyXdCXgh/giphy.gif?cid=790b7611796512503e883e445d1dd315f7f67cb69636b78e&rid=giphy.gif&ct=g');
+}
+#slides .slide-4 {
+  background-image: url('https://i.giphy.com/media/GYdyfzzDfanrq/giphy.webp');
+}
+#slides .slide-5 {
+  background-image: url('https://i.giphy.com/media/citBl9yPwnUOs/giphy.webp');
+}
+
+.control {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin: 3rem auto;
+}
+
+#content {
+  width: 80%;
+  height: 10%;
+  /* position: relative; */
+  z-index: 2;
+}
+#shadow {
+  width: 100%;
+  overflow: hidden;
+}
+
+#content .inside {
+  width: 500%;
+  height: 10%;
+}
+
+#content .content {
+  width: 20%;
+  float: left;
+  display: block;
+  height: 100%;
+  color: #ffffff;
+  text-align: left;
+}
+#content .slide-content1 {
+  background-color: #666;
+}
+#content .slide-content2 {
+  background-color: #666;
+}
+#content .slide-content3 {
+  background-color: #666;
+}
+#content .slide-content4 {
+  background-color: #666;
+}
+#content .slide-content5 {
+  background-color: #666;
+}
+
+p {
+  padding: 0 0.5rem;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#dots {
+  display: flex;
+  align-items: center;
+}
+
+#dots label {
+  border-radius: 50%;
+  border: 4px solid #666;
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  background: #bbb;
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+#dots label:hover {
+  background: greenyellow;
+}
+
+#slide1:checked ~ .control #dots label:nth-child(1),
+#slide2:checked ~ .control #dots label:nth-child(2),
+#slide3:checked ~ .control #dots label:nth-child(3),
+#slide4:checked ~ .control #dots label:nth-child(4),
+#slide5:checked ~ .control #dots label:nth-child(5) {
+  background: lime;
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    height: calc(100vw * 1.78);
+  }
+
+  #slider {
+    padding: 2rem 0.5rem 0;
+  }
+
+  #dots {
+    margin: 0 auto 1rem;
+  }
+
+  #dots label {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  #slides .slide {
+    height: 150%;
+  }
+
+  .control {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin: 1rem auto;
+  }
+  p {
+    padding: 0;
+    font-weight: 100;
+    font-size: 1.2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+}
